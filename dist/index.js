@@ -1,8 +1,3 @@
-/**
- * OBIX C# Binding
- * Unity integration, .NET ecosystem
- * Connects libpolycall FFI/polyglot bridge to C#/.NET runtime
- */
 function normalizeFunctionIdentifier(fn) {
     if (typeof fn === 'string' && fn.trim())
         return fn;
@@ -12,11 +7,6 @@ function normalizeFunctionIdentifier(fn) {
     }
     return undefined;
 }
-/**
- * Create a C# binding to libpolycall
- * @param config Configuration for the binding
- * @returns Initialized bridge for invoking polyglot functions
- */
 export function createCsharpBinding(config) {
     let initialized = false;
     const abiBindingName = 'csharp';
@@ -85,17 +75,14 @@ export function createCsharpBinding(config) {
             return initialized;
         },
         async loadAssembly(assemblyPath) {
-            // Stub implementation
             console.log('Loading C# assembly:', assemblyPath);
             return {};
         },
         async createGameObject(gameObjectName, components) {
-            // Stub implementation
             console.log('Creating Unity GameObject:', gameObjectName);
             return 'gameobject-id';
         },
         async forceGarbageCollection() {
-            // Stub implementation
             console.log('Forcing .NET garbage collection');
         },
     };
